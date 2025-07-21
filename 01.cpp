@@ -2,6 +2,7 @@
 using namespace std;
 
 int main() {
+    //declaring the size
     int size;
     cout<<"Enter the size of array";
     cin>>size;
