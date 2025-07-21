@@ -2,23 +2,22 @@
 using namespace std;
 
 int main() {
-    int decimal;
+    int num, binary[32], i = 0;
+
     cout << "Enter a decimal number: ";
-    cin >> decimal;
+    cin >> num;
 
-    if (decimal == 0) {
-        cout << "Binary: 0" << endl;
-        return 0;
+    while (num > 0) {
+        binary[i] = num % 2;
+        num = num / 2;
+        i++;
     }
 
-    string binary = "";  //to store the binary no.
-    while (decimal > 0) {
-        // conversion
-        int remainder = decimal % 2;
-        binary = to_string(remainder) + binary;
-        decimal = decimal / 2;
+    cout << "Binary: ";
+    for (int j = i - 1; j >= 0; j--) {
+        cout << binary[j];
     }
 
-    cout << "Binary: " << binary << endl;
+    cout << endl;
     return 0;
 }
